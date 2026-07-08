@@ -18,7 +18,7 @@ mean_population = np.mean(DataPopulation)
 std_population = np.std(DataPopulation)
 
 mean_sample = np.mean(DataSample)
-std_sample = np.std(DataSample)
+std_sample = np.std(DataSample, ddof=1)
 
 # Print the results
 print("Population Mean:", mean_population)

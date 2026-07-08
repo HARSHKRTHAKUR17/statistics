@@ -1,6 +1,14 @@
 from scipy.stats import poisson
-import matplotlib as plt
+import matplotlib.pyplot as plt
+import numpy as np
 
+np.random.seed(42)
+
+N=10000
+lambda_value = 10
+DataPopulation = np.random.poisson(lam=lambda_value, size=N)
+
+mean_population = np.mean(DataPopulation)
 # Generate a histogram of DataPopulation
 plt.figure(figsize=(10, 6))
 counts, bins, _ = plt.hist(
@@ -14,7 +22,7 @@ counts, bins, _ = plt.hist(
 
 # Plot the Poisson distribution that best fits the sample mean
 x = np.arange(0, bins[-1] + 1)
-pmf_values = poisson.pmf(x, mu=mean_sample)
+pmf_values = poisson.pmf(x, mu=mean_population)
 plt.plot(
     x,
     pmf_values,

@@ -11,8 +11,8 @@ N = 10000
 DataPopulation = np.random.poisson(lam=lambda_value, size=N)
 
 # Parameters for sampling
-n = 30   # Sample size
-m = 100  # Number of samples to take
+n = 30   # Sample size # we can increase this for more accurate results
+m = 100  # Number of samples to take # we can increase this too for better results
 
 # Initialize arrays to store sample means and standard deviations
 SampleMeans = np.zeros(m)
